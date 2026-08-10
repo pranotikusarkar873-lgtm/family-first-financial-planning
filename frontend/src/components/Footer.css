@@ -29,15 +29,19 @@
   flex-direction: column;
 }
 
-.footer-logo-text .logo-main {
-  font-weight: 700;
+.footer-brand .new-logo-text .logo-main {
+  color: white;
+  font-weight: 800;
   font-size: 1.25rem;
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
-.footer-logo-text .logo-sub {
+.footer-brand .new-logo-text .logo-sub {
+  color: rgba(255,255,255,0.8);
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.7);
+  font-weight: 700;
+  letter-spacing: 0.12em;
 }
 
 .footer-desc {

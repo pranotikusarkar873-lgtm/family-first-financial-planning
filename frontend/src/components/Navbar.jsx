@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Briefcase } from 'lucide-react';
+import { Menu, X, Briefcase, Shield } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -38,22 +38,12 @@ const Navbar = () => {
         
         {/* Brand */}
         <div className="nav-brand">
-          <div className="nav-logo-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#logo-grad)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <defs>
-                <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#7047EB" />
-                  <stop offset="100%" stopColor="#F97316" />
-                </linearGradient>
-              </defs>
-              <path d="M12 4L4 8L12 12L20 8L12 4Z" />
-              <path d="M4 12L12 16L20 12" />
-              <path d="M4 16L12 20L20 16" />
-            </svg>
+          <div className="nav-logo-icon new-logo-icon">
+            <Shield size={20} color="white" strokeWidth={2.5} />
           </div>
-          <div className="nav-logo-text">
+          <div className="nav-logo-text new-logo-text">
             <span className="logo-main">Family First</span>
-            <span className="logo-sub">Financial Planning</span>
+            <span className="logo-sub">INSURANCE</span>
           </div>
         </div>
         

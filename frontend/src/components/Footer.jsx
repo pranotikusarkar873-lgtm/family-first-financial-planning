@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, Clock } from 'lucide-react';
+import { Phone, Mail, Clock, Shield } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -12,16 +12,12 @@ const Footer = () => {
           {/* Column 1: Brand */}
           <div className="footer-brand">
             <div className="footer-logo">
-              <div className="nav-logo-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 4L4 8L12 12L20 8L12 4Z" />
-                  <path d="M4 12L12 16L20 12" />
-                  <path d="M4 16L12 20L20 16" />
-                </svg>
+              <div className="nav-logo-icon new-logo-icon">
+                <Shield size={20} color="white" strokeWidth={2.5} />
               </div>
-              <div className="footer-logo-text">
+              <div className="footer-logo-text new-logo-text">
                 <span className="logo-main">Family First</span>
-                <span className="logo-sub">Financial Planning</span>
+                <span className="logo-sub">INSURANCE</span>
               </div>
             </div>
             <p className="footer-desc">
