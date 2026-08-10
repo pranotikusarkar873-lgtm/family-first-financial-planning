@@ -1,0 +1,326 @@
+.hero-section {
+  position: relative;
+  padding-top: 140px; /* Account for navbar */
+  padding-bottom: 80px;
+  background-color: #FAFAFB;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-100,150 C200,50 400,300 800,100' stroke='rgba(112, 71, 235, 0.05)' stroke-width='40' fill='none' stroke-linecap='round' stroke-dasharray='1 40' /%3E%3Cpath d='M200,600 C500,400 700,700 1200,500' stroke='rgba(249, 115, 22, 0.05)' stroke-width='40' fill='none' stroke-linecap='round' stroke-dasharray='1 40' /%3E%3C/svg%3E");
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 360px;
+  gap: 32px;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px; /* Slightly wider for the 3 columns */
+}
+
+/* --- Left Column: Text --- */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  align-self: flex-start;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.badge-icon {
+  color: var(--accent-orange);
+  fill: var(--accent-orange);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.highlight-gradient {
+  background: var(--gradient-cta);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-desc {
+  font-size: 1.125rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.hero-benefits {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.benefit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.benefit-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.benefit-icon-wrapper.shield { color: #3B82F6; }
+.benefit-icon-wrapper.hand { color: #10B981; }
+.benefit-icon-wrapper.pie { color: #7047EB; }
+.benefit-icon-wrapper.user { color: #F97316; }
+
+.benefit-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  max-width: 80px;
+}
+
+
+/* --- Center Column: Image --- */
+.hero-image-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 200px 200px 24px 24px; /* Arch shape */
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.floating-purple-badge {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110%;
+  background: var(--gradient-advisor);
+  border-radius: var(--radius-pill);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(28, 25, 77, 0.3);
+}
+
+.purple-badge-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.purple-badge-text h4 {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+
+.purple-badge-text p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+/* --- Right Column: Form --- */
+.hero-form-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-form-card {
+  background: white;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  width: 100%;
+}
+
+.form-header {
+  margin-bottom: 24px;
+}
+
+.form-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+.hero-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--text-light);
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 14px 14px 14px 44px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: var(--radius-md);
+  font-family: var(--font-primary);
+  font-size: 0.9375rem;
+  color: var(--text-dark);
+  background-color: #FAFAFB;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: var(--accent-orange);
+  background-color: white;
+}
+
+.select-group select {
+  padding-left: 14px; /* No icon */
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B6982' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.form-footer {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-light);
+  font-size: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "text image"
+      "form form";
+    gap: 64px;
+  }
+  
+  .hero-content {
+    grid-area: text;
+  }
+  
+  .hero-image-wrapper {
+    grid-area: image;
+  }
+  
+  .hero-form-wrapper {
+    grid-area: form;
+    justify-content: center;
+  }
+  
+  .hero-form-card {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "text"
+      "image"
+      "form";
+    gap: 48px;
+  }
+  
+  .hero-benefits {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .floating-purple-badge {
+    width: 95%;
+    bottom: -20px;
+    padding: 12px 16px;
+  }
+}

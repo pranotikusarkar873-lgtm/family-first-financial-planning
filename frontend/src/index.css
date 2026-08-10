@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Colors based on Reference Image */
+  --primary-navy: #1C194D; /* Deep navy/purple used for text and footer */
+  --text-dark: #2D2B4A;
+  --text-light: #6B6982;
+  
+  --accent-orange: #F97316; /* For buttons and highlights */
+  --accent-orange-light: #FF8E3C;
+  --accent-purple: #7047EB; /* Used in gradients and badges */
+  --accent-pink: #D946EF;
+  
+  /* Gradients */
+  --gradient-cta: linear-gradient(135deg, #7047EB 0%, #F97316 100%);
+  --gradient-banner: linear-gradient(135deg, #7047EB 0%, #D946EF 50%, #14B8A6 100%);
+  --gradient-advisor: linear-gradient(180deg, #2D2654 0%, #1A153A 100%);
+
+  /* Backgrounds */
+  --bg-page: #FAFAFB; /* Off-white base */
+  
+  /* Pastel Card Colors */
+  --bg-peach: #FFF0E6;
+  --bg-mint: #E6F7F4;
+  --bg-blue: #E8F2FB;
+  --bg-lavender: #F2E8FA;
+  
+  /* Border Colors */
+  --border-peach: #FFD5B8;
+  --border-mint: #BCEBE1;
+  --border-blue: #C5DDF3;
+  --border-lavender: #DAC5F3;
+
+  /* Utility */
+  --shadow-card: 0 10px 30px rgba(28, 25, 77, 0.08);
+  --shadow-btn: 0 8px 20px rgba(249, 115, 22, 0.3);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 50px;
+  
+  --font-primary: 'Noto Sans Devanagari', 'Inter', sans-serif;
+  
+  --section-pad: 80px 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(112, 71, 235, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.03) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: var(--section-pad);
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Common Typography */
+.section-eyebrow {
+  display: inline-block;
+  background-color: rgba(28, 25, 77, 0.05);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 48px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-family: var(--font-primary);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient {
+  background: var(--gradient-cta);
+  color: white;
+  box-shadow: var(--shadow-btn);
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(249, 115, 22, 0.4);
+}
+
+.btn-white {
+  background: white;
+  color: var(--primary-navy);
+}
+
+/* Icons */
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+  section {
+    padding: 60px 0;
+  }
+}
