@@ -11,7 +11,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       
-      const sections = ['hero', 'services', 'process', 'about', 'footer'];
+      const sections = ['hero', 'services', 'process', 'why-choose-us', 'about', 'testimonials', 'footer'];
       let current = 'hero';
       
       for (const section of sections) {
@@ -53,7 +53,8 @@ const Navbar = () => {
           <a href="#about" className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}>आमच्याबद्दल</a>
           <a href="#services" className={`nav-link ${activeSection === 'services' ? 'active' : ''}`}>योजना</a>
           <a href="#process" className={`nav-link ${activeSection === 'process' ? 'active' : ''}`}>प्रक्रिया</a>
-          <a href="#about" className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}>का निवडावे आम्हाला?</a>
+          <a href="#why-choose-us" className={`nav-link ${activeSection === 'why-choose-us' ? 'active' : ''}`}>का निवडावे आम्हाला?</a>
+          <a href="#testimonials" className={`nav-link ${activeSection === 'testimonials' ? 'active' : ''}`}>ग्राहक मनोगत</a>
           <a href="#footer" className={`nav-link ${activeSection === 'footer' ? 'active' : ''}`}>संपर्क</a>
         </div>
         
@@ -81,7 +82,8 @@ const Navbar = () => {
           <a href="#about" className={`mobile-link ${activeSection === 'about' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>आमच्याबद्दल</a>
           <a href="#services" className={`mobile-link ${activeSection === 'services' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>योजना</a>
           <a href="#process" className={`mobile-link ${activeSection === 'process' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>प्रक्रिया</a>
-          <a href="#about" className={`mobile-link ${activeSection === 'about' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>का निवडावे आम्हाला?</a>
+          <a href="#why-choose-us" className={`mobile-link ${activeSection === 'why-choose-us' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>का निवडावे आम्हाला?</a>
+          <a href="#testimonials" className={`mobile-link ${activeSection === 'testimonials' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>ग्राहक मनोगत</a>
           <a href="#footer" className={`mobile-link ${activeSection === 'footer' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>संपर्क</a>
           <button 
             className="btn btn-gradient mobile-cta"

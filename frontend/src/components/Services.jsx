@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Umbrella, HeartPulse, TrendingUp, RockingChair } from 'lucide-react';
+import { Umbrella, HeartPulse, TrendingUp, RockingChair, GraduationCap } from 'lucide-react';
 import './Services.css';
 
 const servicesData = [
@@ -27,6 +27,12 @@ const servicesData = [
     desc: 'निवृत्तीनंतरही आर्थिक स्वातंत्र्यासाठी नियोजन आवश्यक.',
     icon: RockingChair,
     colorClass: 'service-lavender'
+  },
+  {
+    title: 'एज्युकेशन प्लॅनिंग',
+    desc: 'मुलांच्या उच्च शिक्षणासाठी आणि उज्वल भविष्यासाठी सुरक्षित आर्थिक नियोजन.',
+    icon: GraduationCap,
+    colorClass: 'service-peach'
   }
 ];
 

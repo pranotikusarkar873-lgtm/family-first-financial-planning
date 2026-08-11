@@ -6,12 +6,12 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
 }
 
 .service-card {
-  padding: 40px 24px;
+  padding: 30px 16px;
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;

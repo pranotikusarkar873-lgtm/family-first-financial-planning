@@ -207,7 +207,8 @@ const HeroSection = () => {
                   required
                 >
                   <option value="" disabled>आपली गरज निवडा</option>
-                  <option value="Financial Planning">Financial Planning</option>
+                  <option value="Customize Financial Planning">Customize Financial Planning</option>
+                  <option value="Term insurance planning">Term insurance planning</option>
                   <option value="Life Insurance">Life Insurance</option>
                   <option value="Health Insurance">Health Insurance</option>
                   <option value="Mutual Funds">Mutual Funds & SIP</option>
