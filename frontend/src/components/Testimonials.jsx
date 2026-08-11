@@ -59,12 +59,12 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
+      staggerChildren: 0.15
     }
   }
 };
 
-const itemVariants = {
+const cardVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, 
@@ -91,42 +91,43 @@ const Testimonials = () => {
         </motion.div>
         
         <motion.div 
-          className="testimonials-zigzag"
+          className="testimonials-grid"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: false, amount: 0.1 }}
         >
-          {testimonialsData.map((testimonial, index) => {
-            const isEven = index % 2 === 0;
-            return (
-              <motion.div 
-                key={index} 
-                className={`zigzag-item ${isEven ? 'row-normal' : 'row-reverse'}`}
-                variants={itemVariants}
-                style={{ borderTop: `4px solid ${testimonial.color}` }}
-              >
-                <div className="zigzag-image-container">
-                  {testimonial.image ? (
-                    <img src={testimonial.image} alt={testimonial.name} className="zigzag-image" />
-                  ) : (
-                    <div className="fallback-avatar" style={{ backgroundColor: testimonial.color }}>
-                      {testimonial.initials}
-                    </div>
-                  )}
+          {testimonialsData.map((testimonial, index) => (
+            <motion.div 
+              key={index} 
+              className="testimonial-card"
+              variants={cardVariants}
+              style={{ borderBottom: `4px solid ${testimonial.color}` }}
+            >
+              <Quote size={40} className="quote-icon" />
+              <p className="testimonial-text">"{testimonial.text}"</p>
+              
+              <div className="testimonial-author">
+                <div 
+                  className="author-avatar" 
+                  style={{ 
+                    backgroundColor: testimonial.image ? 'transparent' : testimonial.color,
+                    backgroundImage: testimonial.image ? `url(${testimonial.image})` : 'none',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    border: testimonial.image ? '2px solid white' : 'none',
+                    boxShadow: testimonial.image ? '0 2px 10px rgba(0,0,0,0.1)' : 'none'
+                  }}
+                >
+                  {!testimonial.image && testimonial.initials}
                 </div>
-                
-                <div className="zigzag-content">
-                  <Quote size={40} className="quote-mark" color={testimonial.color} />
-                  <p className="zigzag-text">"{testimonial.text}"</p>
-                  <div className="zigzag-author">
-                    <h4>- {testimonial.name}</h4>
-                    <span>({testimonial.role})</span>
-                  </div>
+                <div className="author-info">
+                  <h4>{testimonial.name}</h4>
+                  <p>{testimonial.role}</p>
                 </div>
-              </motion.div>
-            );
-          })}
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
         
       </div>
