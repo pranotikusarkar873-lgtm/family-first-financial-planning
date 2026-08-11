@@ -14,102 +14,165 @@
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary-navy);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .testimonials-subtitle {
-  font-size: 1.125rem;
   color: var(--text-light);
+  font-size: 1.125rem;
   max-width: 600px;
   margin: 0 auto;
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.testimonial-card {
-  background-color: white;
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.testimonials-zigzag {
   display: flex;
   flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-}
-
-.quote-icon {
-  color: rgba(249, 115, 22, 0.2);
-  margin-bottom: 16px;
-}
-
-.testimonial-text {
-  font-size: 1rem;
-  color: var(--text-dark);
-  line-height: 1.6;
-  font-style: italic;
-  margin-bottom: 24px;
-  flex-grow: 1;
-}
-
-.testimonial-author {
+.zigzag-item {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: auto;
-  border-top: 1px solid #f1f1f1;
-  padding-top: 16px;
+  gap: 40px;
+  background: white;
+  padding: 30px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: transform 0.3s ease;
 }
 
-.author-avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+.zigzag-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.zigzag-item.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.zigzag-image-container {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  border-radius: 8px; /* Slightly square but soft edges */
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border: 4px solid white;
+}
+
+.zigzag-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fallback-avatar {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 1.25rem;
   color: white;
-  flex-shrink: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
-.author-info h4 {
-  font-size: 1.0625rem;
+.zigzag-content {
+  flex-grow: 1;
+  position: relative;
+  padding: 10px;
+}
+
+.quote-mark {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.zigzag-text {
+  font-size: 1.125rem;
+  color: var(--text-dark);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  font-style: normal; /* User's image had normal text */
+}
+
+.zigzag-author {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.zigzag-author h4 {
   font-weight: 700;
   color: var(--primary-navy);
-  margin-bottom: 4px;
+  font-size: 1.125rem;
+  margin: 0;
 }
 
-.author-info p {
-  font-size: 0.8125rem;
+.zigzag-author span {
   color: var(--text-light);
+  font-size: 0.9375rem;
+  font-weight: 500;
 }
 
-@media (max-width: 1024px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* Add small triangle pointers on desktop */
+@media (min-width: 769px) {
+  .zigzag-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 12px;
+    border-style: solid;
+  }
+  
+  .zigzag-item.row-normal .zigzag-content::before {
+    left: -62px;
+    border-color: transparent white transparent transparent;
+  }
+  
+  .zigzag-item.row-reverse .zigzag-content::before {
+    right: -62px;
+    border-color: transparent transparent transparent white;
   }
 }
 
 @media (max-width: 768px) {
-  .testimonials-section {
-    padding: 60px 0;
+  .zigzag-item, .zigzag-item.row-reverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 24px 20px;
   }
   
-  .testimonials-title {
-    font-size: 2rem;
+  .zigzag-image-container {
+    width: 120px;
+    height: 120px;
   }
   
-  .testimonials-grid {
-    grid-template-columns: 1fr;
+  .quote-mark {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10px;
+  }
+  
+  .zigzag-author {
+    justify-content: center;
+  }
+  
+  .zigzag-text {
+    font-size: 1rem;
   }
 }
