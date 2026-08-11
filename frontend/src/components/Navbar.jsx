@@ -11,7 +11,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       
-      const sections = ['hero', 'services', 'process', 'why-choose-us', 'about', 'testimonials', 'footer'];
+      const sections = ['hero', 'services', 'process', 'why-choose-us', 'about', 'testimonials', 'contact-card-section'];
       let current = 'hero';
       
       for (const section of sections) {
@@ -55,7 +55,7 @@ const Navbar = () => {
           <a href="#process" className={`nav-link ${activeSection === 'process' ? 'active' : ''}`}>प्रक्रिया</a>
           <a href="#why-choose-us" className={`nav-link ${activeSection === 'why-choose-us' ? 'active' : ''}`}>का निवडावे आम्हाला?</a>
           <a href="#testimonials" className={`nav-link ${activeSection === 'testimonials' ? 'active' : ''}`}>ग्राहक मनोगत</a>
-          <a href="#footer" className={`nav-link ${activeSection === 'footer' ? 'active' : ''}`}>संपर्क</a>
+          <a href="#contact-card-section" className={`nav-link ${activeSection === 'contact-card-section' ? 'active' : ''}`}>संपर्क</a>
         </div>
         
         {/* CTA */}
@@ -84,7 +84,7 @@ const Navbar = () => {
           <a href="#process" className={`mobile-link ${activeSection === 'process' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>प्रक्रिया</a>
           <a href="#why-choose-us" className={`mobile-link ${activeSection === 'why-choose-us' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>का निवडावे आम्हाला?</a>
           <a href="#testimonials" className={`mobile-link ${activeSection === 'testimonials' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>ग्राहक मनोगत</a>
-          <a href="#footer" className={`mobile-link ${activeSection === 'footer' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>संपर्क</a>
+          <a href="#contact-card-section" className={`mobile-link ${activeSection === 'contact-card-section' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>संपर्क</a>
           <button 
             className="btn btn-gradient mobile-cta"
             onClick={() => {

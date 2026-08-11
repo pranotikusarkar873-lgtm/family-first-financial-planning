@@ -7,6 +7,7 @@ import About from './components/About';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
 import CTA from './components/CTA';
+import ContactCard from './components/ContactCard';
 import Footer from './components/Footer';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <About />
         <Testimonials />
         <CTA />
+        <ContactCard />
       </main>
       <Footer />
     </>
